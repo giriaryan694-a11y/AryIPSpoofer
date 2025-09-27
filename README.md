@@ -59,7 +59,7 @@ curl --socks5 127.0.0.1:1080 http://example.com
 ```
 **Replace 1080 with the port you configured.**
 
-##⚠️ Legal and Ethical Notes
+## ⚠️ Legal and Ethical Notes
 
 • **Use Responsibly**: This tool is for **educational and authorized testing purposes only.**
 • **Unauthorized Use**: Spoofing IP addresses without permission is **illegal** in most jurisdictions.
