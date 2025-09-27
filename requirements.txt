@@ -1,0 +1,5 @@
+scapy
+pyfiglet
+termcolor
+colorama
+PySocks
