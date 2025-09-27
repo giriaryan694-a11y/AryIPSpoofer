@@ -53,10 +53,10 @@ sudo python main.py
 • Optionally, enable authentication for the SOCKS5 proxy.
 
 ### 2. Use the SOCKS5 Proxy
-** Once the proxy is running, you can route traffic from other tools through it: **
+**Once the proxy is running, you can route traffic from other tools through it:**
 ```
 curl --socks5 127.0.0.1:1080 http://example.com
 ```
-** Replace 1080 with the port you configured. **
+**Replace 1080 with the port you configured.**
 
 
