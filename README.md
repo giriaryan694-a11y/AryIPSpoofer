@@ -1,15 +1,13 @@
 # AryIPSpoofer
 
-**AryIPSpoofer** is a Python tool for IP spoofing and SOCKS5 proxy routing. It allows you to spoof your IP address for outgoing packets and route traffic from other tools through a SOCKS5 proxy, optionally protected with a username and password.
+**AryIPSpoofer** is a Python tool for sending spoofed IP packets (UDP/ICMP). It allows you to craft packets with a spoofed source IP address.
 
 ---
 
 ## 📌 Features
-- **IP Spoofing**: Spoof your IP for UDP/ICMP packets.
-- **SOCKS5 Proxy**: Route traffic from other tools through a spoofed IP.
-- **Optional Authentication**: Secure your proxy with a username and password.
-- **User-Friendly**: Input-based menu for easy configuration.
-- **Banner**: Decorative ASCII art banner with "Made By Aryan Giri".
+- **IP Spoofing**: Craft and send spoofed UDP/ICMP packets
+- **User-Friendly**: Input-based menu for easy configuration
+- **Banner**: Decorative ASCII art with "Made By Aryan Giri"
 
 ---
 
@@ -18,53 +16,43 @@
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/giriaryan694-a11y/AryIPSpoofer.git
-
 cd AryIPSpoofer
 ```
 ### 2. Install Dependencies
+```
+pip install -r requirements.txt --break-system-packages
+```
+> **Note:** Use a virtual environment if preferred:
 
 ```
-python -m venv aryipspoofer
-source aryipspoofer/bin/activate
-pip3 install -r requirements.txt
-
-```
-> OR
-```
-pip3 install -r requirements.txt --break-system-packages
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
 ```
 
 ### 3. Run the Tool
-
 ```
-sudo python main.py
+sudo python3 ary_ipspoofer.py
 ```
-
-> Note: Root privileges are required for raw socket operations.
+> **Note:** Root privileges are required for raw packet operations.
 
 ## 🚀 Usage
+**Configure the Tool**
+Follow the prompts to:
 
-### 1. Configure the Tool
-**Follow the prompts to:**
+1. Enter the source IP to spoof
+2. Enter the destination IP
+3. Choose protocol (udp/icmp)
+4. Enter destination port (for UDP)
+5. Enter network interface (default: eth0)
 
-• Enter the IP to spoof.
-• Choose the protocol for the test packet (UDP/ICMP).
-• Enter the network interface (e.g., eth0).
-• Optionally, enable authentication for the SOCKS5 proxy.
+## ⚠️ Important Notes
+• Sends individual spoofed UDP/ICMP packets using Scapy
+• For educational purposes in controlled environments
 
-### 2. Use the SOCKS5 Proxy
-**Once the proxy is running, you can route traffic from other tools through it:**
-```
-curl --socks5 127.0.0.1:1080 http://example.com
-```
-**Replace 1080 with the port you configured.**
-
-## ⚠️ Legal and Ethical Notes
-
-• **Use Responsibly**: This tool is for **educational and authorized testing purposes only.**
-• **Unauthorized Use**: Spoofing IP addresses without permission is **illegal** in most jurisdictions.
-• **Network Restrictions**: Spoofing may not work on networks with ingress filtering.
-
-This project is for **educational purposes only.** Use at your own risk.
-
+### Legal and Ethical Considerations
+• Use Responsibly: Only in networks where you have explicit permission
+• Legal Risks: Unauthorized spoofing is illegal in most jurisdictions
+• Network Limitations: Most networks filter spoofed packets
 
